@@ -125,29 +125,38 @@ export class ConsultationComponent implements OnInit {
     this.updateAvailableTimeSlots();
   }
 
+  // Update the date
   onDateChange(): void {
     this.updateAvailableTimeSlots();
   }
 
+  // Update the available time slot
   updateAvailableTimeSlots(): void {
     const consultation = this.editingConsultation || this.newConsultation;
+    // Checking the name of doctor is same with the doctor name in the array
     const selectedDoctor = this.doctors.find(d => d.name === consultation.doctorName);
+    // If not the doctor time slot will still empty
     if (!selectedDoctor) {
       this.availableTimeSlots = [];
       return;
     }
 
+    // **Call getDayOfWeek() to get the day of the week corresponding to the selected date.
     const selectedDay = this.getDayOfWeek(consultation.date);
+
+    // **If the available date is not equal the selected date, it will not allow the users to select
     if (!selectedDoctor.availability.includes(selectedDay)) {
       this.availableTimeSlots = [];
       this.errorMessage = `${selectedDoctor.name} is not available on ${selectedDay}s. Please select a different date.`;
       return;
     }
 
+    // If the date is free, it will update the timeslot of doctors.
     this.errorMessage = '';
     this.availableTimeSlots = selectedDoctor.timeSlots;
   }
 
+  // Verify the validity of consultation data
   validateConsultation(consultation: Consultation): boolean {
     if (!consultation.patientName.trim()) {
       this.errorMessage = 'Please enter patient name.';
@@ -161,6 +170,7 @@ export class ConsultationComponent implements OnInit {
       this.errorMessage = 'Please select a time slot.';
       return false;
     }
+    // Check the selected date is available date or not
     if (!this.isDateAvailable(consultation.date, consultation.doctorName)) {
       this.errorMessage = 'Selected date is not available for this doctor.';
       return false;
@@ -168,12 +178,14 @@ export class ConsultationComponent implements OnInit {
     return true;
   }
 
+  // Check if the doctor is available on the selected date.
   isDateAvailable(date: Date, doctorName: string): boolean {
     const selectedDoctor = this.doctors.find(d => d.name === doctorName);
     if (!selectedDoctor) return false;
     return selectedDoctor.availability.includes(this.getDayOfWeek(date));
   }
 
+  // Add the new consultation records
   addConsultation(): void {
     if (!this.validateConsultation(this.newConsultation)) {
       return;
@@ -181,7 +193,9 @@ export class ConsultationComponent implements OnInit {
 
     this.consultationService.addConsultation(this.newConsultation).subscribe({
       next: () => {
+        // Reload the consultations record
         this.loadConsultations();
+        // Reset the consultation form
         this.resetForm();
         this.errorMessage = '';
       },
@@ -192,17 +206,22 @@ export class ConsultationComponent implements OnInit {
     });
   }
 
+  // Edit the existing consultation records
   startEdit(consultation: Consultation): void {
     this.editingConsultation = { ...consultation };
+    // showForm = false means hidden, true is visible
     this.showForm = false;
     this.updateAvailableTimeSlots();
   }
 
+  // Cancel the edition
   cancelEdit(): void {
     this.editingConsultation = null;
   }
 
+  // Save the editing records
   saveEdit(): void {
+    // Check the editing consultation have significant id or not
     if (!this.editingConsultation || !this.editingConsultation._id) {
       return;
     }
@@ -211,12 +230,14 @@ export class ConsultationComponent implements OnInit {
       return;
     }
 
+    // Update the back end records
     this.consultationService.updateConsultation(this.editingConsultation._id, this.editingConsultation).subscribe({
       next: () => {
         this.loadConsultations();
         this.editingConsultation = null;
         this.errorMessage = '';
       },
+      // If fail, show the error
       error: (error) => {
         console.error('Error updating consultation:', error);
         this.errorMessage = 'Failed to update consultation. Please try again.';
@@ -224,18 +245,23 @@ export class ConsultationComponent implements OnInit {
     });
   }
 
+  // Delete consultation
   deleteConsultation(id: string | undefined): void {
+    // Check the id is existing or not
     if (!id) {
       this.errorMessage = 'Cannot delete consultation: Invalid ID';
       return;
     }
     
+    // Error prevention
     if (confirm('Are you sure you want to delete this consultation?')) {
+      // Delete the data in the back-end and database
       this.consultationService.deleteConsultation(id).subscribe({
         next: () => {
           this.consultations = this.consultations.filter(c => c._id !== id);
           this.errorMessage = '';
         },
+        // Show the error if cannot successfully delete the data
         error: (error) => {
           console.error('Error deleting consultation:', error);
           this.errorMessage = 'Failed to delete consultation. Please try again.';
@@ -244,6 +270,7 @@ export class ConsultationComponent implements OnInit {
     }
   }
 
+  // Reset the consultation record
   resetForm(): void {
     this.newConsultation = {
       patientName: '',
@@ -256,6 +283,7 @@ export class ConsultationComponent implements OnInit {
     this.showForm = false;
   }
 
+  // Accepts a date and returns the corresponding day of the week
   getDayOfWeek(date: Date): string {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return days[new Date(date).getDay()];

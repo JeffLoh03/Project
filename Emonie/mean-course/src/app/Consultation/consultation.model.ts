@@ -1,3 +1,4 @@
+// The consultation need to obtain the specific data with relevant data type
 export interface Consultation {
   _id?: string;
   patientName: string;

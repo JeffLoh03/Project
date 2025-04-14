@@ -1,466 +1,466 @@
 .diary-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: #f8fafc;
-  min-height: 100vh;
+  max-width: 1200px; /* // Maximum width of the container */
+  margin: 0 auto; /* // Center-align the container */
+  padding: 2rem; /* // Add padding around the content */
+  background-color: #f8fafc; /* // Set background color */
+  min-height: 100vh; /* // Ensure the container occupies at least the full viewport height */
 }
 
 .header {
-  text-align: center;
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: linear-gradient(135deg, #3498db, #2c3e50);
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center; /* // Center-align text */
+  margin-bottom: 3rem; /* // Add margin below the header */
+  padding: 2rem; /* // Add padding inside the header */
+  background: linear-gradient(135deg, #3498db, #2c3e50); /* // Gradient background for header */
+  border-radius: 16px; /* // Rounded corners for the header */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* // Add subtle shadow for depth */
 }
 
 .header h1 {
-  color: white;
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: white; /* // White text color for the header title */
+  font-size: 2.8rem; /* // Set the font size of the header title */
+  margin-bottom: 1rem; /* // Add margin below the title */
+  font-weight: 600; /* // Bold font weight */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* // Add text shadow for effect */
 }
 
 .header p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9); /* // Lighter white for the paragraph text */
+  font-size: 1.2rem; /* // Set the font size for the paragraph */
+  max-width: 600px; /* // Restrict max width of the paragraph */
+  margin: 0 auto; /* // Center-align the paragraph */
 }
 
 .error-message {
-  background-color: #fee2e2;
-  color: #dc2626;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  background-color: #fee2e2; /* // Light red background for error message */
+  color: #dc2626; /* // Red color for the text */
+  padding: 1rem; /* // Padding inside the error message */
+  border-radius: 8px; /* // Rounded corners for the error message box */
+  margin-bottom: 1.5rem; /* // Add space below the error message */
+  font-weight: 500; /* // Medium weight for text */
+  display: flex; /* // Display in flexbox layout */
+  align-items: center; /* // Vertically center items inside the message */
+  gap: 0.5rem; /* // Gap between elements inside the error message */
 }
 
 .actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-  gap: 1rem;
-  flex-wrap: wrap;
+  display: flex; /* // Use flexbox for the actions section */
+  justify-content: space-between; /* // Distribute space between elements */
+  align-items: center; /* // Vertically center the items */
+  margin-bottom: 2rem; /* // Margin at the bottom */
+  gap: 1rem; /* // Gap between action elements */
+  flex-wrap: wrap; /* // Allow wrapping on smaller screens */
 }
 
 .add-button {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  display: flex; /* // Use flexbox layout for button content */
+  align-items: center; /* // Vertically align button elements */
+  gap: 0.8rem; /* // Space between button elements */
+  padding: 1rem 2rem; /* // Add padding inside the button */
+  background: linear-gradient(135deg, #3498db, #2980b9); /* // Gradient background for button */
+  color: white; /* // White text color */
+  border: none; /* // No border */
+  border-radius: 12px; /* // Rounded corners for the button */
+  font-size: 1.1rem; /* // Set font size */
+  font-weight: 500; /* // Medium font weight */
+  cursor: pointer; /* // Pointer cursor on hover */
+  transition: all 0.3s ease; /* // Smooth transition for button hover effects */
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* // Subtle shadow for depth */
 }
 
 .add-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px); /* // Slight hover effect to move the button up */
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4); /* // Stronger shadow on hover */
 }
 
 .filter-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+  display: flex; /* // Use flexbox for the filter section */
+  align-items: center; /* // Vertically align filter elements */
+  gap: 1rem; /* // Space between filter elements */
 }
 
 .filter-section label {
-  color: #34495e;
-  font-weight: 500;
+  color: #34495e; /* // Label text color */
+  font-weight: 500; /* // Medium font weight */
 }
 
 .filter-section select {
-  padding: 0.8rem 1.5rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
-  font-size: 1rem;
-  background-color: white;
-  color: #2c3e50;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 0.8rem 1.5rem; /* // Add padding inside the select input */
+  border: 2px solid #e2e8f0; /* // Border for the select input */
+  border-radius: 10px; /* // Rounded corners */
+  font-size: 1rem; /* // Font size for the select */
+  background-color: white; /* // White background color */
+  color: #2c3e50; /* // Text color for the select */
+  cursor: pointer; /* // Pointer cursor on hover */
+  transition: all 0.3s ease; /* // Smooth transition on focus */
 }
 
 .filter-section select:focus {
-  outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none; /* // Remove default focus outline */
+  border-color: #3498db; /* // Change border color on focus */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* // Add shadow on focus */
 }
 
 .emotion-buttons {
-  display: flex;
-  gap: 1rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: flex; /* // Use flexbox for emotion buttons */
+  gap: 1rem; /* // Space between buttons */
+  margin: 2rem 0; /* // Margin for the emotion buttons section */
+  flex-wrap: wrap; /* // Allow wrapping on smaller screens */
+  justify-content: center; /* // Center-align buttons */
 }
 
 .emotion-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  font-weight: 600;
-  min-width: 120px;
-  color: white;
+  display: inline-flex; /* // Inline-flex layout for emotion buttons */
+  align-items: center; /* // Vertically center-align icon and text */
+  gap: 0.5rem; /* // Space between icon and text */
+  padding: 0.6rem 1.2rem; /* // Padding inside the buttons */
+  border: none; /* // No border for the buttons */
+  border-radius: 12px; /* // Rounded corners for the buttons */
+  cursor: pointer; /* // Pointer cursor on hover */
+  transition: all 0.3s ease; /* // Smooth transition effect */
+  font-size: 1rem; /* // Set font size */
+  font-weight: 600; /* // Bold font weight */
+  min-width: 120px; /* // Minimum width for the buttons */
+  color: white; /* // White text color */
 }
 
 .emotion-button fa-icon {
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* // Font size for the icon inside the button */
 }
 
 .emotion-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* // Slight hover effect to move the button up */
 }
 
 /* Joy */
 .emotion-buttons button:nth-child(1) {
-  background-color: #FF9933;
+  background-color: #FF9933; /* // Background color for Joy button */
 }
 
 /* Sadness */
 .emotion-buttons button:nth-child(2) {
-  background-color: #4169E1;
+  background-color: #4169E1; /* // Background color for Sadness button */
 }
 
 /* Anger */
 .emotion-buttons button:nth-child(3) {
-  background-color: #E53935;
+  background-color: #E53935; /* // Background color for Anger button */
 }
 
 /* Anxiety */
 .emotion-buttons button:nth-child(4) {
-  background-color: #8E44AD;
+  background-color: #8E44AD; /* // Background color for Anxiety button */
 }
 
 /* Numb */
 .emotion-buttons button:nth-child(5) {
-  background-color: #78909C;
+  background-color: #78909C; /* // Background color for Numb button */
 }
 
 /* Active States */
 .emotion-button.active {
-  filter: brightness(1.2);
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5);
+  filter: brightness(1.2); /* // Brightness effect for active buttons */
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.5); /* // Inner shadow when active */
 }
 
 /* Emotion tags in diary entries */
 .diary-emotion.Joy {
-  background-color: #fff3e0;
-  color: #FF9933;
+  background-color: #fff3e0; /* // Background color for Joy tag */
+  color: #FF9933; /* // Text color for Joy tag */
 }
 
 .diary-emotion.Sadness {
-  background-color: #e8f0fe;
-  color: #4169E1;
+  background-color: #e8f0fe; /* // Background color for Sadness tag */
+  color: #4169E1; /* // Text color for Sadness tag */
 }
 
 .diary-emotion.Anger {
-  background-color: #ffebee;
-  color: #E53935;
+  background-color: #ffebee; /* // Background color for Anger tag */
+  color: #E53935; /* // Text color for Anger tag */
 }
 
 .diary-emotion.Anxiety {
-  background-color: #f3e5f5;
-  color: #8E44AD;
+  background-color: #f3e5f5; /* // Background color for Anxiety tag */
+  color: #8E44AD; /* // Text color for Anxiety tag */
 }
 
 .diary-emotion.Numb {
-  background-color: #eceff1;
-  color: #78909C;
+  background-color: #eceff1; /* // Background color for Numb tag */
+  color: #78909C; /* // Text color for Numb tag */
 }
 
 .diary-form {
-  background-color: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  margin-bottom: 3rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: white; /* // Background color for the diary form */
+  padding: 2.5rem; /* // Padding inside the form */
+  border-radius: 16px; /* // Rounded corners for the form */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* // Subtle shadow for the form */
+  margin-bottom: 3rem; /* // Margin at the bottom */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* // Light border around the form */
 }
 
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* // Margin for each form group */
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 0.8rem;
-  color: #34495e;
-  font-weight: 500;
-  font-size: 1.1rem;
+  display: block; /* // Display labels as block elements */
+  margin-bottom: 0.8rem; /* // Margin below the label */
+  color: #34495e; /* // Text color for labels */
+  font-weight: 500; /* // Medium font weight for labels */
+  font-size: 1.1rem; /* // Font size for labels */
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  width: 100%;
-  padding: 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  background-color: #f8fafc;
+  width: 100%; /* // Make inputs take up full width */
+  padding: 1rem; /* // Padding inside inputs */
+  border: 2px solid #e2e8f0; /* // Border color for inputs */
+  border-radius: 10px; /* // Rounded corners for inputs */
+  font-size: 1.1rem; /* // Font size for inputs */
+  transition: all 0.3s ease; /* // Smooth transition on focus */
+  background-color: #f8fafc; /* // Background color for inputs */
 }
 
 .form-group textarea {
-  min-height: 150px;
-  resize: vertical;
+  min-height: 150px; /* // Minimum height for the textarea */
+  resize: vertical; /* // Allow vertical resizing */
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-  background-color: white;
+  outline: none; /* // Remove default focus outline */
+  border-color: #3498db; /* // Change border color on focus */
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2); /* // Add shadow on focus */
+  background-color: white; /* // Change background color on focus */
 }
 
 .diary-list {
-  display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
+  display: grid; /* // Use grid layout for the diary list */
+  gap: 2rem; /* // Space between diary items */
+  margin-top: 2rem; /* // Margin at the top */
 }
 
 .diary-item {
-  background: white;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  background: white; /* // Background color for diary item */
+  border-radius: 16px; /* // Rounded corners for diary items */
+  padding: 2rem; /* // Padding inside the diary item */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* // Shadow for the diary item */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* // Border around the diary item */
+  transition: all 0.3s ease; /* // Smooth transition for hover effect */
 }
 
 .diary-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px); /* // Hover effect for slight elevation */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); /* // Stronger shadow on hover */
 }
 
 .diary-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #f1f5f9;
+  display: flex; /* // Use flex layout for the diary header */
+  justify-content: space-between; /* // Space between header elements */
+  align-items: flex-start; /* // Align items to the top */
+  margin-bottom: 1.5rem; /* // Margin below the header */
+  padding-bottom: 1rem; /* // Padding at the bottom */
+  border-bottom: 2px solid #f1f5f9; /* // Border at the bottom of the header */
 }
 
 .diary-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e293b;
+  font-size: 1.5rem; /* // Font size for the title */
+  font-weight: 600; /* // Bold font weight for the title */
+  color: #1e293b; /* // Text color for the title */
 }
 
 .diary-date {
-  color: #64748b;
-  font-size: 0.95rem;
+  color: #64748b; /* // Text color for the date */
+  font-size: 0.95rem; /* // Font size for the date */
 }
 
 .diary-content {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  color: #334155;
-  margin-bottom: 1.5rem;
-  white-space: pre-wrap;
+  font-size: 1.1rem; /* // Font size for the diary content */
+  line-height: 1.7; /* // Line height for better readability */
+  color: #334155; /* // Text color for the content */
+  margin-bottom: 1.5rem; /* // Margin below the content */
+  white-space: pre-wrap; /* // Allow content to wrap */
 }
 
 .diary-emotion {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  display: inline-block; /* // Display emotions as inline-block */
+  padding: 0.6rem 1.2rem; /* // Padding for emotion tags */
+  border-radius: 10px; /* // Rounded corners for emotion tags */
+  font-weight: 500; /* // Medium font weight for emotion tags */
+  font-size: 0.95rem; /* // Font size for emotion tags */
+  margin-bottom: 1.5rem; /* // Margin below emotion tags */
 }
 
 .diary-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 2px solid #f1f5f9;
+  display: flex; /* // Flex layout for the actions section */
+  justify-content: flex-end; /* // Align actions to the right */
+  gap: 1rem; /* // Space between action buttons */
+  margin-top: 1.5rem; /* // Margin at the top */
+  padding-top: 1.5rem; /* // Padding at the top */
+  border-top: 2px solid #f1f5f9; /* // Border at the top of the actions section */
 }
 
 .edit-button,
 .delete-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 10px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  display: inline-flex; /* // Inline-flex for the button layout */
+  align-items: center; /* // Vertically align button content */
+  gap: 0.5rem; /* // Space between button elements */
+  padding: 0.8rem 1.5rem; /* // Padding inside the buttons */
+  border-radius: 10px; /* // Rounded corners for buttons */
+  font-size: 0.95rem; /* // Font size for buttons */
+  font-weight: 600; /* // Bold font weight for buttons */
+  cursor: pointer; /* // Pointer cursor on hover */
+  transition: all 0.3s ease; /* // Smooth transition for hover effects */
 }
 
 .edit-button {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  border: none;
+  background: linear-gradient(135deg, #3498db, #2980b9); /* // Gradient background for edit button */
+  color: white; /* // White text color for edit button */
+  border: none; /* // No border for edit button */
 }
 
 .delete-button {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-  color: white;
-  border: none;
+  background: linear-gradient(135deg, #e74c3c, #c0392b); /* // Gradient background for delete button */
+  color: white; /* // White text color for delete button */
+  border: none; /* // No border for delete button */
 }
 
 .edit-button:hover,
 .delete-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* // Slight hover effect to move the buttons up */
 }
 
 .edit-button:hover {
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3); /* // Stronger shadow for edit button */
 }
 
 .delete-button:hover {
-  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+  box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3); /* // Stronger shadow for delete button */
 }
 
 .no-entries {
-  text-align: center;
-  padding: 3rem;
-  background-color: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center; /* // Center-align the message for no entries */
+  padding: 3rem; /* // Padding inside the no entries box */
+  background-color: white; /* // White background */
+  border-radius: 16px; /* // Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* // Light shadow around the box */
 }
 
 .no-entries p {
-  color: #64748b;
-  font-size: 1.2rem;
+  color: #64748b; /* // Text color for the no entries message */
+  font-size: 1.2rem; /* // Font size for the message */
 }
 
 .form-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-  margin-top: 2rem;
+  display: flex; /* // Flexbox layout for form action buttons */
+  justify-content: flex-end; /* // Align action buttons to the right */
+  gap: 1rem; /* // Space between action buttons */
+  margin-top: 2rem; /* // Margin at the top */
 }
 
 .form-actions button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 140px;
+  display: inline-flex; /* // Inline-flex for button layout */
+  align-items: center; /* // Vertically align button content */
+  justify-content: center; /* // Center-align button content */
+  padding: 0.8rem 2rem; /* // Padding inside the buttons */
+  border: none; /* // No border for the buttons */
+  border-radius: 12px; /* // Rounded corners for buttons */
+  font-size: 1rem; /* // Font size for buttons */
+  font-weight: 600; /* // Bold font weight for buttons */
+  cursor: pointer; /* // Pointer cursor on hover */
+  transition: all 0.3s ease; /* // Smooth transition for button hover effects */
+  min-width: 140px; /* // Minimum width for buttons */
 }
 
 .form-actions button fa-icon {
-  font-size: 1.1rem;
-  margin-right: 8px;
+  font-size: 1.1rem; /* // Font size for icons inside buttons */
+  margin-right: 8px; /* // Space between icon and text */
 }
 
 .form-actions button:first-child {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  background: linear-gradient(135deg, #3498db, #2980b9); /* // Gradient background for first button */
+  color: white; /* // White text color */
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* // Subtle shadow for first button */
 }
 
 .form-actions button:last-child {
-  background: white;
-  color: #64748b;
-  border: 2px solid #e2e8f0;
+  background: white; /* // White background for the second button */
+  color: #64748b; /* // Text color for the second button */
+  border: 2px solid #e2e8f0; /* // Border for the second button */
 }
 
 .form-actions button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px); /* // Hover effect for all buttons */
 }
 
 .form-actions button:first-child:hover {
-  background: linear-gradient(135deg, #2980b9, #2c3e50);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  background: linear-gradient(135deg, #2980b9, #2c3e50); /* // Change background on hover for first button */
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4); /* // Stronger shadow on hover */
 }
 
 .form-actions button:last-child:hover {
-  border-color: #cbd5e1;
-  color: #475569;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1; /* // Change border color on hover for the second button */
+  color: #475569; /* // Change text color on hover for the second button */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* // Subtle shadow on hover */
 }
 
 .form-actions button:active {
-  transform: translateY(0);
+  transform: translateY(0); /* // Reset position on button click */
 }
 
 /* Icon styles */
 fa-icon {
-  font-size: 1.1em;
+  font-size: 1.1em; /* // Font size for icons */
 }
 
 .emotion fa-icon {
-  margin-right: 4px;
+  margin-right: 4px; /* // Space between icon and text for emotion buttons */
 }
 
 .submit-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
-  margin-top: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  display: inline-flex; /* // Inline-flex for the submit button layout */
+  align-items: center; /* // Vertically center the content of the button */
+  justify-content: center; /* // Center-align the content of the button */
+  width: 100%; /* // Full width for the submit button */
+  padding: 1rem 2rem; /* // Padding inside the button */
+  background: linear-gradient(135deg, #3498db, #2980b9); /* // Gradient background for the button */
+  color: white; /* // White text color */
+  border: none; /* // No border */
+  border-radius: 12px; /* // Rounded corners for the button */
+  font-size: 1.1rem; /* // Font size for the button */
+  font-weight: 600; /* // Bold font weight */
+  cursor: pointer; /* // Pointer cursor on hover */
+  transition: all 0.3s ease; /* // Smooth transition on hover */
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* // Subtle shadow */
+  margin-top: 2rem; /* // Margin at the top of the button */
+  text-transform: uppercase; /* // Uppercase text */
+  letter-spacing: 0.5px; /* // Letter spacing for the text */
 }
 
 .submit-button .button-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
+  display: flex; /* // Flex layout for the button content */
+  align-items: center; /* // Vertically align the content */
+  justify-content: center; /* // Horizontally center the content */
+  gap: 0.8rem; /* // Space between icon and text */
 }
 
 .submit-button fa-icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+  font-size: 1.2rem; /* // Font size for the icon inside the button */
+  transition: transform 0.3s ease; /* // Smooth transition for icon scale */
 }
 
 .submit-button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #2980b9, #2c3e50);
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+  transform: translateY(-2px); /* // Move the button up on hover */
+  background: linear-gradient(135deg, #2980b9, #2c3e50); /* // Change background on hover */
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4); /* // Stronger shadow on hover */
 }
 
 .submit-button:hover fa-icon {
-  transform: scale(1.1);
+  transform: scale(1.1); /* // Scale up the icon on hover */
 }
 
 .submit-button:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  transform: translateY(0); /* // Reset position on button click */
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* // Reset shadow on click */
 }
