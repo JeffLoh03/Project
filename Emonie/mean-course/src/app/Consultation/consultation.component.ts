@@ -4,24 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { ConsultationService } from './consultation.service';
 import { Consultation } from './consultation.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { 
-  faPencil,
-  faTrashCan,
-  faSave,
-  faTimes,
-  faPlus,
-  faCheck
-} from '@fortawesome/free-solid-svg-icons';
+// Import different icon, like edit, delete, save, close, add.
+import { faPencil,faTrashCan,faSave,faTimes,faPlus,faCheck } from '@fortawesome/free-solid-svg-icons';
 
+// Create the interface for doctor
 interface Doctor {
   name: string;
   specialty: string;
+  // [] means the string array which can include many slot
   availability: string[];
   timeSlots: string[];
 }
 
 @Component({
   selector: 'app-consultation',
+  // The component can works independently, so can be directly imported and used by other components
   standalone: true,
   imports: [CommonModule, FormsModule, FontAwesomeModule],
   providers: [ConsultationService],
@@ -29,15 +26,22 @@ interface Doctor {
   styleUrls: ['./consultation.component.css']
 })
 export class ConsultationComponent implements OnInit {
-  // Font Awesome icons
+  // Edit icon
   faPencil = faPencil;
+  // Delete icon
   faTrashCan = faTrashCan;
+  // Save icon
   faSave = faSave;
+  // Close icon
   faTimes = faTimes;
+  // Add icon
   faPlus = faPlus;
+  // Confirm icon
   faCheck = faCheck;
 
+  // Create a consultation array to store the consultation deatils
   consultations: Consultation[] = [];
+  // Stores form data for new consultation records, new data will replace the original value
   newConsultation: Consultation = {
     patientName: '',
     doctorName: '',
@@ -46,12 +50,16 @@ export class ConsultationComponent implements OnInit {
     notes: '',
     consultationType: 'Regular'
   };
+  // Clear error messages
   errorMessage: string = '';
+  // The form is hidden initially when false
   showForm: boolean = false;
+  // Indicates the date selected by the user, the initial value is the current date
   selectedDate: Date = new Date();
   availableTimeSlots: string[] = [];
   editingConsultation: Consultation | null = null;
 
+  // Create the doctor array with the available time slot and date.
   doctors: Doctor[] = [
     {
       name: 'Dr. Sarah Johnson',
@@ -79,6 +87,7 @@ export class ConsultationComponent implements OnInit {
     }
   ];
 
+  // Provide different types of consultation type
   consultationTypes = [
     'Regular',
     'Emergency',
@@ -86,18 +95,23 @@ export class ConsultationComponent implements OnInit {
     'Initial Assessment'
   ];
 
+  // Transmit the data into private method, to achieve interaction with backend performs 
   constructor(private consultationService: ConsultationService) {}
 
+  // when component initialize, it will automatically reload the consultation records
   ngOnInit(): void {
     this.loadConsultations();
   }
 
   loadConsultations(): void {
+    // Retrieve data from backend
     this.consultationService.getConsultations().subscribe({
+      // The retrieved data will replace the preset data for presenting
       next: (consultations) => {
         this.consultations = consultations;
         this.errorMessage = '';
       },
+      // If happen error, it will show notification
       error: (error) => {
         console.error('Error loading consultations:', error);
         this.errorMessage = 'Failed to load consultations. Please try again.';
@@ -105,6 +119,7 @@ export class ConsultationComponent implements OnInit {
     });
   }
 
+  // Update the relevant doctors information from the current consultation record
   selectDoctor(doctor: Doctor): void {
     this.newConsultation.doctorName = doctor.name;
     this.updateAvailableTimeSlots();
