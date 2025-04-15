@@ -53,7 +53,7 @@ export class TodoComponent implements OnInit {
       tasks: ['5 minutes meditation', 'Deep breathing exercise', 'Mindful walking']
     },
     {
-      category: 'Self-Care',
+      category: 'Self Care',
       tasks: ['Take a relaxing bath', 'Read a book', 'Listen to calming music']
     },
     {
