@@ -1,3 +1,4 @@
+//server-side application
 const mongoose = require('mongoose');
 //the schema is define structure of the documents that store in MongoDB
 const todoSchema = new mongoose.Schema({

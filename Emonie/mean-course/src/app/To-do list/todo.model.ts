@@ -1,3 +1,4 @@
+//client-side application
 //declares a reusable TS interface
 export interface Todo {
   //? mean unique ID of the todo, assigned by the MongoDB
