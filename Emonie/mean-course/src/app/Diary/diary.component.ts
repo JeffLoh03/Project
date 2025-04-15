@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { DiaryService } from './diary.service';
 import { Diary } from './diary.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import {
   faSmile,
   faSadTear,
@@ -22,7 +24,13 @@ type Emotion = 'Joy' | 'Sadness' | 'Anger' | 'Anxiety' | 'Numb';
 @Component({
   selector: 'app-diary',
   standalone: true,
-  imports: [CommonModule, FormsModule, FontAwesomeModule], // Importing required modules
+  imports: [
+    CommonModule,
+    FormsModule,
+    FontAwesomeModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   providers: [DiaryService], // Injecting the DiaryService
   templateUrl: './diary.component.html',
   styleUrls: ['./diary.component.css']

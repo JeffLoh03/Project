@@ -419,48 +419,212 @@ fa-icon {
 }
 
 .submit-button {
-  display: inline-flex; /* // Inline-flex for the submit button layout */
-  align-items: center; /* // Vertically center the content of the button */
-  justify-content: center; /* // Center-align the content of the button */
-  width: 100%; /* // Full width for the submit button */
-  padding: 1rem 2rem; /* // Padding inside the button */
-  background: linear-gradient(135deg, #3498db, #2980b9); /* // Gradient background for the button */
-  color: white; /* // White text color */
-  border: none; /* // No border */
-  border-radius: 12px; /* // Rounded corners for the button */
-  font-size: 1.1rem; /* // Font size for the button */
-  font-weight: 600; /* // Bold font weight */
-  cursor: pointer; /* // Pointer cursor on hover */
-  transition: all 0.3s ease; /* // Smooth transition on hover */
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* // Subtle shadow */
-  margin-top: 2rem; /* // Margin at the top of the button */
-  text-transform: uppercase; /* // Uppercase text */
-  letter-spacing: 0.5px; /* // Letter spacing for the text */
-}
-
-.submit-button .button-content {
-  display: flex; /* // Flex layout for the button content */
-  align-items: center; /* // Vertically align the content */
-  justify-content: center; /* // Horizontally center the content */
-  gap: 0.8rem; /* // Space between icon and text */
-}
-
-.submit-button fa-icon {
-  font-size: 1.2rem; /* // Font size for the icon inside the button */
-  transition: transform 0.3s ease; /* // Smooth transition for icon scale */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .submit-button:hover {
-  transform: translateY(-2px); /* // Move the button up on hover */
-  background: linear-gradient(135deg, #2980b9, #2c3e50); /* // Change background on hover */
-  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4); /* // Stronger shadow on hover */
-}
-
-.submit-button:hover fa-icon {
-  transform: scale(1.1); /* // Scale up the icon on hover */
+  background-color: #3498db;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .submit-button:active {
-  transform: translateY(0); /* // Reset position on button click */
-  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3); /* // Reset shadow on click */
+  transform: translateY(0);
+}
+
+.submit-button .button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.submit-button fa-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover fa-icon {
+  transform: scale(1.1);
+  color: white;
+}
+
+.actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #3498db;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.actions button mat-icon {
+  margin-right: 4px;
+}
+
+.emotion-buttons button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+/* Joy button */
+.emotion-buttons button:nth-child(1) {
+  border-color: #FF9933;
+  color: #FF9933;
+  background-color: transparent;
+}
+
+.emotion-buttons button:nth-child(1):hover {
+  background-color: #FF9933;
+  color: white;
+}
+
+/* Sadness button */
+.emotion-buttons button:nth-child(2) {
+  border-color: #4169E1;
+  color: #4169E1;
+  background-color: transparent;
+}
+
+.emotion-buttons button:nth-child(2):hover {
+  background-color: #4169E1;
+  color: white;
+}
+
+/* Anger button */
+.emotion-buttons button:nth-child(3) {
+  border-color: #E53935;
+  color: #E53935;
+  background-color: transparent;
+}
+
+.emotion-buttons button:nth-child(3):hover {
+  background-color: #E53935;
+  color: white;
+}
+
+/* Anxiety button */
+.emotion-buttons button:nth-child(4) {
+  border-color: #8E44AD;
+  color: #8E44AD;
+  background-color: transparent;
+}
+
+.emotion-buttons button:nth-child(4):hover {
+  background-color: #8E44AD;
+  color: white;
+}
+
+/* Numb button */
+.emotion-buttons button:nth-child(5) {
+  border-color: #78909C;
+  color: #78909C;
+  background-color: transparent;
+}
+
+.emotion-buttons button:nth-child(5):hover {
+  background-color: #78909C;
+  color: white;
+}
+
+.diary-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.diary-actions button[color="primary"] {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.diary-actions button[color="primary"]:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.diary-actions button[color="warn"] {
+  border-color: #E53935;
+  color: #E53935;
+}
+
+.diary-actions button[color="warn"]:hover {
+  background-color: #E53935;
+  color: white;
+}
+
+.form-actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+.form-actions button[color="primary"] {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.form-actions button[color="primary"]:hover {
+  background-color: #3498db;
+  color: white;
+}
+
+.form-actions button[color="warn"] {
+  border-color: #E53935;
+  color: #E53935;
+}
+
+.form-actions button[color="warn"]:hover {
+  background-color: #E53935;
+  color: white;
 }

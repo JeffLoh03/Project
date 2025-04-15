@@ -94,20 +94,24 @@
 
     <div class="form-group">
       <label for="notes">Additional Notes:</label>
-      <textarea 
-        id="notes" 
-        [(ngModel)]="newConsultation.notes"
-        placeholder="Any specific concerns or information you'd like to share?"
-        class="form-textarea"
-      ></textarea>
+      <mat-form-field class="notes-field" appearance="outline">
+        <textarea 
+          matInput 
+          [(ngModel)]="newConsultation.notes"
+          placeholder=" Any specific concerns or information you'd like to share?"
+          rows="5"
+        ></textarea>
+      </mat-form-field>
     </div>
 
     <div class="form-actions">
-      <button class="cancel-btn" (click)="showForm = false">
-        <i class="fas fa-times"></i> Cancel
+      <button mat-stroked-button color="warn" (click)="showForm = false">
+        <mat-icon>close</mat-icon>
+        Cancel
       </button>
-      <button class="save-btn" (click)="addConsultation()">
-        <i class="fas fa-check"></i> Schedule Consultation
+      <button mat-raised-button color="primary" (click)="addConsultation()">
+        <mat-icon>check_circle</mat-icon>
+        Schedule Consultation
       </button>
     </div>
   </div>
@@ -169,18 +173,21 @@
             <option value="">Select Time Slot</option>
             <option *ngFor="let slot of availableTimeSlots" [value]="slot">{{ slot }}</option>
           </select>
-          <textarea 
-            [(ngModel)]="editingConsultation!.notes" 
-            placeholder="Additional Notes"
-            class="form-textarea"
-          ></textarea>
+          <mat-form-field class="notes-field" appearance="outline">
+            <textarea 
+              matInput 
+              [(ngModel)]="editingConsultation!.notes"
+              placeholder="Any specific concerns or information you'd like to share?"
+              rows="5"
+            ></textarea>
+          </mat-form-field>
           <div class="action-buttons">
-            <button class="save-btn" (click)="saveEdit()">
-              <fa-icon [icon]="faSave"></fa-icon>
+            <button mat-raised-button color="primary" (click)="saveEdit()">
+              <mat-icon>save</mat-icon>
               Save Changes
             </button>
-            <button class="cancel-btn" (click)="cancelEdit()">
-              <fa-icon [icon]="faTimes"></fa-icon>
+            <button mat-stroked-button color="warn" (click)="cancelEdit()">
+              <mat-icon>close</mat-icon>
               Cancel
             </button>
           </div>

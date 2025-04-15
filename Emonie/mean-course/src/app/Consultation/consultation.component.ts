@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { ConsultationService } from './consultation.service';
 import { Consultation } from './consultation.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 // Import different icon, like edit, delete, save, close, add.
 import { faPencil,faTrashCan,faSave,faTimes,faPlus,faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,7 +24,15 @@ interface Doctor {
   selector: 'app-consultation',
   // The component can works independently, so can be directly imported and used by other components
   standalone: true,
-  imports: [CommonModule, FormsModule, FontAwesomeModule],
+  imports: [
+    CommonModule, 
+    FormsModule, 
+    FontAwesomeModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   providers: [ConsultationService],
   templateUrl: './consultation.component.html',
   styleUrls: ['./consultation.component.css']

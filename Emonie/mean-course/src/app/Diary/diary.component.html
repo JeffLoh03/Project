@@ -7,30 +7,30 @@
   <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div> <!-- // Display error message if there is one -->
 
   <div class="actions">
-    <button class="add-button" (click)="showCreateForm = !showCreateForm"> <!-- // Toggle form visibility for new entry -->
-      <fa-icon [icon]="faPencilAlt"></fa-icon> <!-- // Pencil icon for creating a new entry -->
-      {{ showCreateForm ? 'Cancel' : 'Write New Entry' }} <!-- // Change text depending on form state -->
+    <button mat-raised-button color="primary" (click)="showCreateForm = !showCreateForm">
+      <mat-icon>edit</mat-icon>
+      {{ showCreateForm ? 'Cancel' : 'Write New Entry' }}
     </button>
 
     <div class="filter-section">
-      <label>Filter by Emotion:</label> <!-- // Label for the filter dropdown -->
-      <select [(ngModel)]="selectedFilter" (change)="filterDiaries()"> <!-- // Dropdown for filtering diaries by emotion -->
-        <option value="">All Entries</option> <!-- // Default option for showing all entries -->
-        <option *ngFor="let emotion of emotions" [value]="emotion"> <!-- // Loop through emotions to create options -->
+      <label>Filter by Emotion:</label>
+      <select [(ngModel)]="selectedFilter" (change)="filterDiaries()">
+        <option value="">All Entries</option>
+        <option *ngFor="let emotion of emotions" [value]="emotion">
           {{ emotion }}
         </option>
       </select>
     </div>
   </div>
 
-  <div class="emotion-buttons" *ngIf="!showCreateForm && !editingDiary"> <!-- // Display emotion buttons when no form is active -->
+  <div class="emotion-buttons" *ngIf="!showCreateForm && !editingDiary">
     <button
+      mat-stroked-button
       *ngFor="let emotion of emotions"
-      class="emotion-button"
-      [class.active]="selectedFilter === emotion"
-      (click)="selectedFilter = emotion; filterDiaries()"> <!-- // Button for each emotion to filter the diaries -->
-      <fa-icon [icon]="getEmotionIcon(emotion)"></fa-icon> <!-- // Emotion icon -->
-      {{ emotion }} <!-- // Emotion name -->
+      [color]="selectedFilter === emotion ? 'primary' : ''"
+      (click)="selectedFilter = emotion; filterDiaries()">
+      <fa-icon [icon]="getEmotionIcon(emotion)"></fa-icon>
+      {{ emotion }}
     </button>
   </div>
 
@@ -56,11 +56,9 @@
       </select>
     </div>
 
-    <button type="submit" class="submit-button" (click)="addDiary()"> <!-- // Submit button to save the new diary entry -->
-      <div class="button-content">
-        <fa-icon [icon]="faSave"></fa-icon> <!-- // Save icon -->
-        <span>Save Entry</span> <!-- // Text for the button -->
-      </div>
+    <button mat-raised-button color="primary" type="submit" (click)="addDiary()">
+      <mat-icon>save</mat-icon>
+      Save Entry
     </button>
   </form>
 
@@ -86,13 +84,13 @@
     </div>
 
     <div class="form-actions">
-      <button type="button" (click)="saveEdit()"> <!-- // Button to save changes to an edited entry -->
-        <fa-icon [icon]="faSave"></fa-icon> <!-- // Save icon -->
-        Save Changes <!-- // Text for the button -->
+      <button mat-raised-button color="primary" type="button" (click)="saveEdit()">
+        <mat-icon>save</mat-icon>
+        Save Changes
       </button>
-      <button type="button" class="cancel-button" (click)="cancelEdit()"> <!-- // Button to cancel editing -->
-        <fa-icon [icon]="faTimes"></fa-icon> <!-- // Cancel icon -->
-        Cancel <!-- // Text for the button -->
+      <button mat-stroked-button color="warn" type="button" (click)="cancelEdit()">
+        <mat-icon>close</mat-icon>
+        Cancel
       </button>
     </div>
   </form>
@@ -114,13 +112,13 @@
       </div>
 
       <div class="diary-actions">
-        <button class="edit-button" (click)="startEdit(diary)"> <!-- // Button to start editing the diary entry -->
-          <fa-icon [icon]="faEdit"></fa-icon> <!-- // Edit icon -->
-          Edit <!-- // Text for the button -->
+        <button mat-stroked-button color="primary" (click)="startEdit(diary)">
+          <mat-icon>edit</mat-icon>
+          Edit
         </button>
-        <button class="delete-button" (click)="deleteDiary(diary._id!)"> <!-- // Button to delete the diary entry -->
-          <fa-icon [icon]="faTrash"></fa-icon> <!-- // Delete icon -->
-          Delete <!-- // Text for the button -->
+        <button mat-stroked-button color="warn" (click)="deleteDiary(diary._id!)">
+          <mat-icon>delete</mat-icon>
+          Delete
         </button>
       </div>
     </div>
