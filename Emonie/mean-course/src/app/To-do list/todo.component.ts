@@ -6,6 +6,8 @@ import { Todo } from './todo.model';
 // Icons used in the component UI
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faSave, faTimes, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 //Define a custom Category type to restrict allowed values
 type Category = 'Mindfulness' | 'Exercise' | 'Self Care';
 
@@ -13,7 +15,13 @@ type Category = 'Mindfulness' | 'Exercise' | 'Self Care';
   selector: 'app-todo',
   //allows a component to be used independently without needing to be declared in an NgModule.
   standalone: true,
-  imports: [CommonModule, FormsModule, FontAwesomeModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    FontAwesomeModule,
+    MatButtonModule,
+    MatIconModule
+  ],
   providers: [TodoService],
   //URL for html and css
   templateUrl: './todo.component.html',

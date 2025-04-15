@@ -51,43 +51,70 @@
   flex-wrap: wrap;
 }
 
-.primary-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #3498db;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: transparent;
-  color: #3498db;
-}
-
-.primary-button:hover {
-  background: #3498db;
-  color: white;
-  transform: translateY(-2px);
-}
-
-.add-task-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 30px;
-  border: 2px solid #3498db;
-  border-radius: 10px;
-  min-width: 180px;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
-  background: transparent;
-  color: #3498db;
+/* Material Button Overrides with fancy effects */
+.mat-mdc-stroked-button {
+  border: 2px solid transparent !important;
+  border-radius: 12px !important;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #3498db, #2980b9) border-box !important;
+  color: #3498db !important;
+  font-weight: 500 !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
   position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.mat-mdc-stroked-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  z-index: -1;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+.mat-mdc-stroked-button:hover {
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3) !important;
+}
+
+.mat-mdc-stroked-button:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Warning button variant */
+.mat-mdc-stroked-button.mat-warn {
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #E53935, #c62828) border-box !important;
+  color: #E53935 !important;
+}
+
+.mat-mdc-stroked-button.mat-warn::before {
+  background: linear-gradient(45deg, #E53935, #c62828);
+}
+
+.mat-mdc-stroked-button.mat-warn:hover {
+  color: white !important;
+  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3) !important;
+}
+
+/* Add Task Button with special styling */
+.add-task-button {
+  min-width: 180px !important;
+  padding: 15px 30px !important;
+  font-size: 16px !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #3498db, #2980b9) border-box !important;
 }
 
 .add-task-button .button-content {
@@ -95,28 +122,177 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
-  position: relative;
-  z-index: 1;
 }
 
 .add-task-button .plus-icon {
   font-size: 20px;
-  transition: transform 0.3s ease;
-}
-
-.add-task-button:hover {
-  transform: translateY(-3px);
-  background: #3498db;
-  color: white;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .add-task-button:hover .plus-icon {
-  transform: rotate(90deg);
-  color: white;
+  transform: rotate(90deg) scale(1.2);
 }
 
-.add-task-button:active {
+/* Quick Action Buttons with card-like effect */
+.quick-action-button {
+  width: 100%;
+  padding: 1.2rem !important;
+  text-align: left;
+  justify-content: flex-start !important;
+  font-size: 1.1rem !important;
+  border-radius: 15px !important;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #3498db, #2980b9) border-box !important;
+  backdrop-filter: blur(5px);
+}
+
+.quick-action-button:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2) !important;
+}
+
+/* Submit Button with gradient animation */
+.submit-button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1rem 2rem !important;
+  font-size: 1.1rem !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #3498db, #2980b9, #3498db) border-box !important;
+  background-size: 200% auto !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.submit-button:hover {
+  background-position: right center !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(52, 152, 219, 0.25) !important;
+}
+
+.submit-button .button-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+/* Form Actions with modern styling */
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 0.8rem 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+/* Todo Actions with improved spacing and effects */
+.todo-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.todo-actions button {
+  padding: 0.8rem 1.5rem !important;
+  min-width: 120px !important;
+}
+
+.todo-actions button fa-icon {
+  margin-right: 8px;
+  transition: transform 0.3s ease;
+}
+
+.todo-actions button:hover fa-icon {
+  transform: scale(1.2);
+}
+
+/* Ripple effect for all buttons */
+.mat-mdc-stroked-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+.mat-mdc-stroked-button:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 0;
+}
+
+/* Disabled state styling */
+.mat-mdc-stroked-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(45deg, #bdc3c7, #95a5a6) border-box !important;
+  color: #95a5a6 !important;
+}
+
+/* Category badges in todo items */
+.category {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: linear-gradient(45deg, #3498db20, #2980b920);
+  color: #3498db;
+  border: 1px solid #3498db40;
+  transition: all 0.3s ease;
+}
+
+.category:hover {
+  background: linear-gradient(45deg, #3498db30, #2980b930);
   transform: translateY(-1px);
+}
+
+/* Checkbox styling */
+.todo-content input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #3498db;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background: white;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.todo-content input[type="checkbox"]:checked {
+  background: #3498db;
+  border-color: #3498db;
+}
+
+.todo-content input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Add subtle animations to icons */
+fa-icon {
+  transition: transform 0.3s ease;
+}
+
+button:hover fa-icon {
+  transform: scale(1.2);
 }
 
 .filter-section {
@@ -172,28 +348,6 @@
 .quick-action-tasks {
   display: grid;
   gap: 1rem;
-}
-
-.quick-action-button {
-  padding: 1.2rem;
-  border: 2px solid #3498db;
-  border-radius: 12px;
-  background-color: transparent;
-  color: #3498db;
-  font-size: 1.1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.quick-action-button:hover {
-  background-color: #3498db;
-  color: white;
-  transform: translateY(-2px);
 }
 
 .todo-form {
@@ -285,15 +439,6 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-}
-
-.category {
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  background-color: #e2e8f0;
-  color: #475569;
 }
 
 .date {

@@ -7,7 +7,7 @@
   <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
 
   <div class="actions">
-    <button class="primary-button add-task-button" (click)="showCreateForm = !showCreateForm">
+    <button mat-stroked-button color="primary" class="add-task-button" (click)="showCreateForm = !showCreateForm">
       <div class="button-content">
         <fa-icon [icon]="faPlus" class="plus-icon"></fa-icon>
         <span>{{ showCreateForm ? 'Cancel' : 'Add New Task' }}</span>
@@ -29,7 +29,8 @@
     <div *ngFor="let action of quickActions" class="quick-action-category">
       <h3>{{ action.category }}</h3>
       <div class="quick-action-tasks">
-        <button *ngFor="let task of action.tasks" 
+        <button mat-stroked-button color="primary"
+                *ngFor="let task of action.tasks" 
                 class="quick-action-button"
                 (click)="addQuickAction(task, action.category)">
           {{ task }}
@@ -58,7 +59,7 @@
       <input type="datetime-local" id="dueDate" [(ngModel)]="newTodo.dueDate" name="dueDate" required>
     </div>
 
-    <button type="submit" class="submit-button">
+    <button mat-stroked-button color="primary" type="submit" class="submit-button">
       <div class="button-content">
         <fa-icon [icon]="faSave"></fa-icon>
         <span>Add Task</span>
@@ -87,11 +88,11 @@
     </div>
 
     <div class="form-actions">
-      <button type="button" (click)="saveEdit()">
+      <button mat-stroked-button color="primary" type="button" (click)="saveEdit()">
         <fa-icon [icon]="faSave"></fa-icon>
         Save Changes
       </button>
-      <button type="button" class="cancel-button" (click)="cancelEdit()">
+      <button mat-stroked-button color="warn" type="button" (click)="cancelEdit()">
         <fa-icon [icon]="faTimes"></fa-icon>
         Cancel
       </button>
@@ -110,11 +111,11 @@
         <span class="category">{{ todo.category }}</span>
         <span class="date">{{ todo.dueDate | date:'mediumDate' }}</span>
         <div class="todo-actions">
-          <button class="edit-button" (click)="startEdit(todo)">
+          <button mat-stroked-button color="primary" (click)="startEdit(todo)">
             <fa-icon [icon]="faEdit"></fa-icon>
             Edit
           </button>
-          <button class="delete-button" (click)="deleteTodo(todo._id!)">
+          <button mat-stroked-button color="warn" (click)="deleteTodo(todo._id!)">
             <fa-icon [icon]="faTrash"></fa-icon>
             Delete
           </button>
