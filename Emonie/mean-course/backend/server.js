@@ -1,9 +1,7 @@
 // Node.js server startup script//
-
 const app = require('./app');
 const debug = require('debug')('node-angular');
 const http = require('http');
-
 
 // The port value is normalized to ensure it matches the HTTP server's expectations
 const normalizePort = val => {
