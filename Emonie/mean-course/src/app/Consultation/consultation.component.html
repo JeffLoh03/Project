@@ -96,6 +96,8 @@
       <label for="notes">Additional Notes:</label>
       <!-- Using the angular material: Input Field-->
       <mat-form-field class="notes-field" appearance="outline">
+        <!--Two-way data binding: means that the user input text, the notes will automatically update-->
+        <!--Placeholder: When the text box is empty, prompt the user to enter content-->
         <textarea 
           matInput 
           [(ngModel)]="newConsultation.notes"
@@ -107,6 +109,8 @@
 
     <div class="form-actions">
       <!--Using the angular material: Button-->
+      <!--As using the Angular Material style buttons so no need to set the colour, just set the colour with using  word like
+      'warn' or 'primary' -->
       <button mat-stroked-button color="warn" (click)="showForm = false">
         <mat-icon>close</mat-icon>
         Cancel
