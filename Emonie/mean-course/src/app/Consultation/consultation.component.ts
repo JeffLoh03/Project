@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ConsultationService } from './consultation.service';
 import { Consultation } from './consultation.model';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// Import the material from angular
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
