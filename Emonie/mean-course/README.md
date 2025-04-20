@@ -159,4 +159,4 @@ For support, please open an issue in the repository or contact the development t
 
 ---
 
-Made with ❤️ by [Your Name/Team]
+
