@@ -6,6 +6,7 @@ import { Todo } from './todo.model';
 // Icons used in the component UI
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faSave, faTimes, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+// Angular Material
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 //Define a custom Category type to restrict allowed values
